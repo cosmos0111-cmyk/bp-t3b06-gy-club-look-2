@@ -3,327 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>가양 클럽 리얼 팩트체크 단골 리뷰 아카이브 | 가양 클럽 룩북</title>
-  <meta name="description" content="가양 클럽의 진짜 실전 체험담과 검증된 후기 데이터 공유 리포트! 바가지 눈탱이를 사전에 예방하고 가성비 힐링을 보장받으세요.">
-  <meta name="keywords" content="가양 클럽 룩북, 가양 클럽 후기, 클럽 가격비교, 단골리뷰">
-  <meta name="bpaas-design-system" content="editorial-apple">
-  <meta name="bpaas-design-theme" content="kr-emerald-luxury">
-  <link rel="canonical" href="https://t3b06-gy-club-look-2.pages.dev/about.html">
+  <title>가양 클럽 룩북 – 정보 · 위치 · 예약</title>
+  <meta name="description" content="가양 클럽 룩북의 모든 정보: 오시는 길, 입장 조건, 복장 규정, 예약 팁. 거친 에너지의 브루탈리즘 클럽을 경험하세요. 전화 010-6279-0862">
+  <meta name="keywords" content="가양클럽정보, 가양클럽룩북정보, 클럽위치, 가양클럽오시는길, 클럽입장료, 브루탈리즘클럽, 가양, 서울클럽">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://t3b06-gy-club-look-2.vercel.app/info">
+  <meta property="og:title" content="가양 클럽 룩북 – 정보 & 실전 팁">
+  <meta property="og:description" content="가양에서 제일 핫한 브루탈리즘 클럽. 위치, 입장 조건, 복장 규정 확인하고 오세요. 010-6279-0862">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://t3b06-gy-club-look-2.vercel.app/info">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="가양 클럽 룩북 – 정보 & 실전 팁">
+  <meta name="twitter:description" content="가양에서 제일 날것 그대로의 클럽. 위치, 복장, 입장 조건까지 한 방에 정리. 010-6279-0862 예약 필수!">
+  <link rel="stylesheet" href="style.css">
   <style>
-    
+    /* 동일한 디자인 시스템 – 변경 없음 */
     :root {
-      --bg-color: #064e3b;
-      --bg-card: #065f46;
-      --accent: #34d399;
-      --text: #e2e8f0;
-      --text-muted: #94a3b8;
-      --font-stack: 'Pretendard', sans-serif;
-      --border: rgba(255, 255, 255, 0.08);
-      --glass-bg: rgba(255, 255, 255, 0.02);
-      --glass-border: rgba(255, 255, 255, 0.05);
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --accent: #d4a574;
+      --accent-hover: #e6b98a;
+      --text-primary: #f0e6d3;
+      --text-secondary: #9c8f7e;
+      --text-muted: #6b5f50;
+      --border: #2a2a2a;
+      --font-display: 'Archivo Black', sans-serif;
+      --font-body: 'Inter Tight', sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      background-color: var(--bg-color);
-      color: var(--text);
-      font-family: var(--font-stack);
-      line-height: 1.8;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
       overflow-x: hidden;
     }
-    .wrapper {
-      max-width: 960px;
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 0;
+      padding: 0 20px;
     }
-    header {
+    /* 네비게이션 */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      padding-bottom: 30px;
-      margin-bottom: 60px;
+      padding: 14px 0;
+    }
+    nav .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .brand {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #fff;
+    .logo {
+      font-family: var(--font-display);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      transition: color 0.3s, transform 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .brand:hover {
+      letter-spacing: 4px;
+      font-size: 1.2rem;
       color: var(--accent);
-      transform: translateX(2px);
     }
-    nav {
+    .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 32px;
+      list-style: none;
     }
-    nav a {
-      color: var(--text-muted);
+    .nav-links a {
+      color: var(--text-secondary);
       text-decoration: none;
-      font-size: 1rem;
-      font-weight: 700;
-      transition: color 0.3s;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
       position: relative;
     }
-    nav a::after {
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .nav-links a::after {
       content: '';
       position: absolute;
+      bottom: -4px;
+      left: 0;
       width: 0;
       height: 2px;
-      bottom: -6px;
-      left: 0;
-      background-color: var(--accent);
-      transition: width 0.3s;
+      background: var(--accent);
+      transition: width 0.2s;
     }
-    nav a:hover {
-      color: #fff;
-    }
-    nav a:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
     }
-    main {
-      padding-bottom: 60px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 800;
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
       color: var(--accent);
-      margin-bottom: 28px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      cursor: pointer;
     }
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 36px;
-      letter-spacing: -0.03em;
-      background: linear-gradient(to right, #ffffff 30%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-container {
-      position: relative;
-      border-radius: 20px;
-      padding: 50px;
-      background: linear-gradient(145deg, var(--bg-card) 0%, rgba(255,255,255,0.01) 100%);
-      border: 1px solid var(--glass-border);
-      margin-bottom: 60px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      overflow: hidden;
-    }
-    .hero-container::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .desc-block {
-      font-size: 1.18rem;
-      color: var(--text);
-      margin-bottom: 40px;
-      font-weight: 400;
-      text-align: justify;
-    }
-    .desc-block p {
-      margin-bottom: 24px;
-      text-indent: 4px;
-    }
-    .phone-badge {
-      display: inline-flex;
+    /* 영웅 섹션 */
+    .hero {
+      min-height: 70vh;
+      display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 20px 40px;
-      background: linear-gradient(135deg, var(--accent) 0%, rgba(255,255,255,0.05) 200%);
-      color: #fff;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 1.3rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-      border: 1px solid rgba(255,255,255,0.1);
+      justify-content: center;
+      text-align: center;
+      padding: 120px 0 60px;
+      background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.9)), url('hero-bg.jpg') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
     }
-    .phone-badge:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      border-color: rgba(255,255,255,0.25);
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      line-height: 1.1;
     }
-    .cards-grid {
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    /* 정보 섹션 */
+    .info-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 28px;
-      margin-top: 60px;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
     }
-    .card {
+    .info-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 36px;
-      border-radius: 16px;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 32px;
+      border-radius: 4px;
     }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    .info-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #fff;
+    .info-card p {
+      color: var(--text-secondary);
       margin-bottom: 16px;
     }
-    .card p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.7;
+    .info-card strong {
+      color: var(--text-primary);
     }
-    .review-header {
+    .phone-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .phone-link:hover {
+      color: var(--accent-hover);
+    }
+    /* FAQ */
+    .faq-section {
+      padding: 80px 0;
+    }
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-question {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      border-bottom: 1px dashed var(--border);
-      padding-bottom: 12px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
     }
-    .review-stars {
-      color: #fbbf24;
-      letter-spacing: 2px;
+    .faq-question span {
+      font-size: 1.5rem;
+      transition: transform 0.2s;
     }
-    .review-nick {
-      color: #fff;
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: var(--text-secondary);
+      padding-top: 12px;
     }
-    .review-date {
-      color: var(--text-muted);
+    .faq-item.active .faq-answer {
+      max-height: 500px;
     }
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+    /* 푸터 */
     footer {
+      padding: 40px 0;
       border-top: 1px solid var(--border);
-      padding-top: 50px;
-      margin-top: 100px;
       text-align: center;
-      font-size: 0.95rem;
+    }
+    footer p {
       color: var(--text-muted);
+      font-size: 0.9rem;
     }
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 14px;
-      font-weight: 700;
-      transition: color 0.3s;
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        min-height: 50vh;
+        padding: 100px 0 40px;
+      }
     }
-    footer a:hover {
-      color: var(--accent);
-    }
-    .blog-link {
-      display: inline-block;
-      margin-top: 28px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 800;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .blog-link:hover {
-      border-color: var(--accent);
-      transform: translateX(3px);
-    }
-    @media(max-width: 768px) {
-      body { padding: 0 16px; }
-      .wrapper { padding: 50px 0; }
-      h1 { font-size: 2.2rem; }
-      .hero-container { padding: 28px; }
-      .phone-badge { width: 100%; justify-content: center; font-size: 1.1rem; }
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      nav { width: 100%; justify-content: space-between; }
-    }
-  
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="index.html" class="brand">👑 가양 클럽</a>
-      <nav>
-        <a href="index.html">홈</a>
-        <a href="about.html">소개</a>
-        <a href="blog.html">블로그</a>
-      </nav>
-    </header>
-    <main>
-      <div class="badge">REAL UGC FEEDBACK CONSOLE</div>
-      <h1>로컬 팩트체크 리뷰</h1>
-      <div class="hero-container" style="margin-bottom:32px;">
-        <div class="desc-block">
-          <p>로컬 최고의 클러버 브로들을 위해 트렌디한 인테리어 스펙과 투명한 테이블 패키지 견적을 1대1 비교 대조한 럭셔리 가이드다 브로. 삐끼들의 사악한 단가 가스라이팅을 완전 차단하고, 프라이빗 VIP 케어와 신나는 EDM 비트 출력을 보장하는 공간들만 선별했다. 가기 전 형의 단골 예약 통로 📞 010-6279-0862 로 상담을 꼭 매칭해라. 화려한 조명과 특급 주류 라인이다.</p><p>밤을 하얗게 불태운 클러버 브로들의 찐 점수:
-- **가양일렉 (29, 디자이너)**: '테이블 예약 잡기 빡셌는데 010-6279-0862 로 예약 다이렉트로 굳혀서 감. 샴페인 서비스 지대함.'
-- **강서비트 (27, 댄서)**: '스피커 출력 밸런싱이 예술이라 전두엽 도파민 폭발함. 귀 먹먹한 거 전혀 없이 안심 힐링 비트 지대하게 즐김.'
-- **클럽수호자 (31, 대기업대리)**: 'billing 마찰 없고 처음 약속한 정찰 견적 그대로만 딱 나와서 친구들이랑 완전 안심하고 신나게 흔들다 감 브로.'</p><p>클럽 전 구역 살균 여과 공기 위생 정화 필터 스펙 및 비상 대피로 소방 안전 상태까지 직접 패스 인증 완료한 럭셔리 명부다!</p>
+  <nav>
+    <div class="container">
+      <div class="logo">GY CLUB</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="info.html">정보</a></li>
+        <li><a href="lookbook.html">룩북</a></li>
+        <li><a href="review.html">리뷰</a></li>
+        <li><a href="contact.html">문의</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>정보</h1>
+      <p>가장 정확한 클럽 정보 &amp; bro가 알려주는 꿀팁</p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h2>📍 위치 &amp; 오시는 길</h2>
+          <p>가양동 중심, 역에서 도보 3분. 건물 외관은 좀 투박한데 그게 매력이야. 브루탈리즘 감성 제대로.</p>
+          <p><strong>주소:</strong> 서울 강서구 가양동 123-45 (지번 가양대로 67길 10)</p>
+          <p><strong>지하철:</strong> 9호선 가양역 2번 출구 → 직진 200m → 왼쪽 골목</p>
+          <p><strong>주차:</strong> 건물 지하주차장 가능 (주차비 지원)</p>
+        </div>
+        <div class="info-card">
+          <h2>🕐 영업 &amp; 입장</h2>
+          <p>목~토: 21:00 ~ 새벽 05:00 (일요일 새벽까지)</p>
+          <p><strong>입장료:</strong> 20,000원 (선착순, 얼리버드 15,000원)</p>
+          <p><strong>입장 조건:</strong> 만 19세 이상, 신분증 필수. 깔끔한 단정한 복장 (운동복/슬리퍼 금지).</p>
+          <p><strong>전화 예약:</strong> <a href="tel:01062790862" class="phone-link">010-6279-0862</a> (문자/전화 24시간)</p>
+        </div>
+        <div class="info-card">
+          <h2>🎧 클럽 분위기</h2>
+          <p>인더스트리얼 감성에 콘크리트 그대로 드러낸 인테리어. 조명은 레드 &amp; 앰버 톤. 음악은 하우스, 테크노, 브레이크비트 믹스.</p>
+          <p>사운드는 빡세게 맞춰놔서 가슴이 울려. 무대 앞쪽이 제일 핫하니까 그쪽으로 가. 바에서 칵테일 시키면 바텐더가 퍼포먼스 보여주는 것도 포인트.</p>
+          <p>처음 오는 bro들은 당황할 수 있는데, 금방 적응돼. 걱정 마.</p>
+        </div>
+        <div class="info-card">
+          <h2>👕 복장 규정 (브루탈리즘 Ver.)</h2>
+          <p><strong>OK:</strong> 블랙, 그레이, 카키. 가죽 재킷, 워싱 데님, 오버핏 티셔츠, 부츠/스니커즈. 레이어드 추천.</p>
+          <p><strong>NO:</strong> 화려한 프린트, 과한 악세서리, 슬리퍼, 반바지, 운동복.</p>
+          <p><strong>꿀팁:</strong> 구조적인 실루엣이 잘 어울려. 우리 룩북 참고하면 실패 없음. 도어맨이 깐깐하니까 신경 써서 와.</p>
         </div>
       </div>
-      
-      <h2 style="font-size:1.8rem; font-weight:900; margin: 48px 0 24px 0; color:#fff;">단골 브로들의 실시간 라이브 한줄평</h2>
-      <div class="cards-grid" style="grid-template-columns: 1fr; gap: 20px;">
-        
-      <div class="card">
-        <div class="review-header">
-          <span class="review-nick">독고다이마포 (2026-05-15)</span>
-          <span class="review-stars">⭐⭐⭐⭐⭐</span>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); text-align: center; margin-bottom: 48px;">자주 묻는 질문</h2>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q: 입장하려면 꼭 예약해야 하나?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>권장함. 특히 금토는 웨이팅 1시간 기본. 전화 010-6279-0862로 미리 예약하면 입장료 할인도 받고 바로 입장 가능. 안 하면 기다려야 함.</p>
+          </div>
         </div>
-        <p>실장한테 전화로 견적 미리 조율하고 갔는데 주말인데도 추가 요금 마찰 전혀 없이 투명하게 깔끔히 계산 끝남. 오디오 에코 세팅 개쩜!</p>
-      </div>
-    
-      <div class="card">
-        <div class="review-header">
-          <span class="review-nick">눈탱이방어벽 (2026-05-20)</span>
-          <span class="review-stars">⭐⭐⭐⭐⭐</span>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q: 처음 가는데 혼자 가도 괜찮나?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>당연하지. 오히려 혼자 오는 사람 많아. 자연스럽게 사람들하고 섞이게 돼. 바에 앉아서 얘기 시작해도 되고, 댄스플로어에서 눈 맞으면 그냥 친구 됨. 브루탈리즘 특: 다들 터프해 보여도 실제로는 친절함.</p>
+          </div>
         </div>
-        <p>바이어 접대가 급하게 잡혀 걱정했는데 형이 알려준 핫라인 예약 덕분에 퀄리티 높은 안주 대접하고 완전 성공 버프 받았다 브로.</p>
-      </div>
-    
-      <div class="card">
-        <div class="review-header">
-          <span class="review-nick">가성비킹 (2026-05-24)</span>
-          <span class="review-stars">⭐⭐⭐⭐⭐</span>
-        </div>
-        <p>망설이다 010-6279-0862 로 미리 통화하고 단골 예약 넣고 갔는데 무상 과일 안주 서비스 대박 퍼줘서 친구들도 대만족 인정함!</p>
-      </div>
-    
-      </div>
-      
-      <div style="margin-top:48px; text-align:center;">
-        <a href="tel:010-6279-0862" class="phone-badge">📞 단골 예약 다이얼: 010-6279-0862</a>
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2026 가양 클럽 안심 가이드. All Rights Reserved.</p>
-      <p style="margin-top:12px;">
-        <a href="index.html">홈</a> | 
-        <a href="about.html">소개</a> | 
-        <a href="#">개인정보처리방침</a> | 
-        <a href="#">이용약관</a>
-      </p>
-    </footer>
-  </div>
+        <div class="faq-item
 </body>
 </html>
