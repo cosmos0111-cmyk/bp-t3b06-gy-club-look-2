@@ -1,333 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>가양 클럽 룩북 – 정보 · 위치 · 예약</title>
-  <meta name="description" content="가양 클럽 룩북의 모든 정보: 오시는 길, 입장 조건, 복장 규정, 예약 팁. 거친 에너지의 브루탈리즘 클럽을 경험하세요. 전화 010-6279-0862">
-  <meta name="keywords" content="가양클럽정보, 가양클럽룩북정보, 클럽위치, 가양클럽오시는길, 클럽입장료, 브루탈리즘클럽, 가양, 서울클럽">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://t3b06-gy-club-look-2.vercel.app/info">
-  <meta property="og:title" content="가양 클럽 룩북 – 정보 & 실전 팁">
-  <meta property="og:description" content="가양에서 제일 핫한 브루탈리즘 클럽. 위치, 입장 조건, 복장 규정 확인하고 오세요. 010-6279-0862">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://t3b06-gy-club-look-2.vercel.app/info">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="가양 클럽 룩북 – 정보 & 실전 팁">
-  <meta name="twitter:description" content="가양에서 제일 날것 그대로의 클럽. 위치, 복장, 입장 조건까지 한 방에 정리. 010-6279-0862 예약 필수!">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* 동일한 디자인 시스템 – 변경 없음 */
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #141414;
-      --accent: #d4a574;
-      --accent-hover: #e6b98a;
-      --text-primary: #f0e6d3;
-      --text-secondary: #9c8f7e;
-      --text-muted: #6b5f50;
-      --border: #2a2a2a;
-      --font-display: 'Archivo Black', sans-serif;
-      --font-body: 'Inter Tight', sans-serif;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    /* 네비게이션 */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-    }
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-family: var(--font-display);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.2s;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
-      color: var(--accent);
-      cursor: pointer;
-    }
-    /* 영웅 섹션 */
-    .hero {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 0 60px;
-      background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.9)), url('hero-bg.jpg') center/cover no-repeat;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-content h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      color: var(--accent);
-      margin-bottom: 16px;
-      line-height: 1.1;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    /* 정보 섹션 */
-    .info-section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-    .info-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 32px;
-      border-radius: 4px;
-    }
-    .info-card h2 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .info-card p {
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-    .info-card strong {
-      color: var(--text-primary);
-    }
-    .phone-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    .phone-link:hover {
-      color: var(--accent-hover);
-    }
-    /* FAQ */
-    .faq-section {
-      padding: 80px 0;
-    }
-    .faq-accordion {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-    }
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-    }
-    .faq-question span {
-      font-size: 1.5rem;
-      transition: transform 0.2s;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      color: var(--text-secondary);
-      padding-top: 12px;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-    }
-    .faq-item.active .faq-question span {
-      transform: rotate(45deg);
-    }
-    /* 푸터 */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    footer p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    /* 반응형 */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-dark);
-        padding: 20px;
-        border-bottom: 1px solid var(--border);
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .hamburger {
-        display: block;
-      }
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        min-height: 50vh;
-        padding: 100px 0 40px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>가양 클럽 룩북 — 정보</title>
+<meta name="description" content="가양 클럽을 처음 찾는 사람들을 위한 상세 정보 가이드. 위치, 시설, 이용 팁, 자주 묻는 질문까지 한눈에 정리했습니다.">
+<meta name="keywords" content="가양 클럽, 가양 클럽 룩북, 클럽 방문 가이드, 가양 클럽 예약, 클럽 체크리스트">
+<link rel="canonical" href="https://gayang-club-trend.program-school.online/about.html">
+<meta property="og:title" content="가양 클럽 룩북 — 정보">
+<meta property="og:description" content="가양 클럽을 처음 찾는 사람들을 위한 상세 정보 가이드. 위치, 시설, 이용 팁, 자주 묻는 질문까지 한눈에 정리했습니다.">
+<meta property="og:url" content="https://gayang-club-trend.program-school.online/about.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gayang-club-trend.program-school.online/og-image.jpg">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <div class="container">
-      <div class="logo">GY CLUB</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">홈</a></li>
-        <li><a href="info.html">정보</a></li>
-        <li><a href="lookbook.html">룩북</a></li>
-        <li><a href="review.html">리뷰</a></li>
-        <li><a href="contact.html">문의</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div>
+<header class="m-head-x23k">
+  <nav class="k-nav-37zh">
+    <ul>
+      <li><a href="/index.html">홈</a></li>
+      <li><a href="/lookbook.html">룩북</a></li>
+      <li><a href="/info.html" class="active">정보</a></li>
+      <li><a href="/contact.html">문의</a></li>
+    </ul>
+    <button class="hamburger-menu" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>정보</h1>
-      <p>가장 정확한 클럽 정보 &amp; bro가 알려주는 꿀팁</p>
-    </div>
+<section class="x-hero-2kzc active">
+  <div class="hero-content">
+    <h1>가양 클럽 정보</h1>
+    <p>가양 클럽을 더 깊게 이해하고, 현장에서 바로 활용할 수 있는 실전 팁을 제공합니다.</p>
+    <a href="#main" class="n-btn-pz0f"><span>내용 바로 보기</span></a>
+  </div>
+</section>
+
+<main class="k-main-4">
+  <section id="overview" class="info-section">
+    <h2>가양 클럽 개요</h2>
+    <p>가양 클럽은 가양동 중심에 위치한 현대적인 엔터테인먼트 공간으로, 최신 사운드 시스템과 다양한 테마 파티를 제공한다. 2020년에 오픈한 이곳은 지역 주민뿐 아니라 외부 방문객에게도 큰 인기를 끌며, 매주 다양한 음악 장르의 DJ와 라이브 퍼포먼스를 선보인다.</p>
+    <p>클럽 내부는 3개의 메인 라운지와 VIP 전용 라운지, 그리고 프라이빗 파티룸으로 구성돼 있어 인원 규모와 목적에 따라 선택할 수 있다. 특히, 조명과 프로젝션이 결합된 시각 효과는 방문객에게 새로운 감각을 제공한다.</p>
   </section>
 
-  <section class="info-section">
-    <div class="container">
-      <div class="info-grid">
-        <div class="info-card">
-          <h2>📍 위치 &amp; 오시는 길</h2>
-          <p>가양동 중심, 역에서 도보 3분. 건물 외관은 좀 투박한데 그게 매력이야. 브루탈리즘 감성 제대로.</p>
-          <p><strong>주소:</strong> 서울 강서구 가양동 123-45 (지번 가양대로 67길 10)</p>
-          <p><strong>지하철:</strong> 9호선 가양역 2번 출구 → 직진 200m → 왼쪽 골목</p>
-          <p><strong>주차:</strong> 건물 지하주차장 가능 (주차비 지원)</p>
-        </div>
-        <div class="info-card">
-          <h2>🕐 영업 &amp; 입장</h2>
-          <p>목~토: 21:00 ~ 새벽 05:00 (일요일 새벽까지)</p>
-          <p><strong>입장료:</strong> 20,000원 (선착순, 얼리버드 15,000원)</p>
-          <p><strong>입장 조건:</strong> 만 19세 이상, 신분증 필수. 깔끔한 단정한 복장 (운동복/슬리퍼 금지).</p>
-          <p><strong>전화 예약:</strong> <a href="tel:01062790862" class="phone-link">010-6279-0862</a> (문자/전화 24시간)</p>
-        </div>
-        <div class="info-card">
-          <h2>🎧 클럽 분위기</h2>
-          <p>인더스트리얼 감성에 콘크리트 그대로 드러낸 인테리어. 조명은 레드 &amp; 앰버 톤. 음악은 하우스, 테크노, 브레이크비트 믹스.</p>
-          <p>사운드는 빡세게 맞춰놔서 가슴이 울려. 무대 앞쪽이 제일 핫하니까 그쪽으로 가. 바에서 칵테일 시키면 바텐더가 퍼포먼스 보여주는 것도 포인트.</p>
-          <p>처음 오는 bro들은 당황할 수 있는데, 금방 적응돼. 걱정 마.</p>
-        </div>
-        <div class="info-card">
-          <h2>👕 복장 규정 (브루탈리즘 Ver.)</h2>
-          <p><strong>OK:</strong> 블랙, 그레이, 카키. 가죽 재킷, 워싱 데님, 오버핏 티셔츠, 부츠/스니커즈. 레이어드 추천.</p>
-          <p><strong>NO:</strong> 화려한 프린트, 과한 악세서리, 슬리퍼, 반바지, 운동복.</p>
-          <p><strong>꿀팁:</strong> 구조적인 실루엣이 잘 어울려. 우리 룩북 참고하면 실패 없음. 도어맨이 깐깐하니까 신경 써서 와.</p>
-        </div>
-      </div>
-    </div>
+  <section id="location" class="info-section">
+    <h2>위치 및 접근성</h2>
+    <p>가양 클럽은 가양역 3번 출구에서 도보 5분 거리에 위치해 있어 대중교통으로 쉽게 접근할 수 있다. 주변에 주차 시설이 부족한 경우를 대비해 인근 공영 주차장을 이용할 수 있으며, 주차장 입구에서 클럽 전용 셔틀버스가 10분 간격으로 운행한다.</p>
+    <p>자전거를 이용하는 방문객을 위해 클럽 앞에 자전거 거치대를 마련했으며, 인근 카페와 레스토랑을 경유해 잠시 휴식을 취한 후 클럽으로 이동하는 코스도 인기가 있다. 또한, 밤 시간대에는 주변 도로에 안전 조명이 강화돼 있어 늦은 시간에도 안심하고 이동할 수 있다.</p>
   </section>
 
-  <section class="faq-section">
-    <div class="container">
-      <h2 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); text-align: center; margin-bottom: 48px;">자주 묻는 질문</h2>
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q: 입장하려면 꼭 예약해야 하나?</span>
-            <span>+</span>
-          </div>
-          <div class="faq-answer">
-            <p>권장함. 특히 금토는 웨이팅 1시간 기본. 전화 010-6279-0862로 미리 예약하면 입장료 할인도 받고 바로 입장 가능. 안 하면 기다려야 함.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q: 처음 가는데 혼자 가도 괜찮나?</span>
-            <span>+</span>
-          </div>
-          <div class="faq-answer">
-            <p>당연하지. 오히려 혼자 오는 사람 많아. 자연스럽게 사람들하고 섞이게 돼. 바에 앉아서 얘기 시작해도 되고, 댄스플로어에서 눈 맞으면 그냥 친구 됨. 브루탈리즘 특: 다들 터프해 보여도 실제로는 친절함.</p>
-          </div>
-        </div>
-        <div class="faq-item
+  <section id="facilities" class="info-section">
+    <h2>시설 및 서비스</h2>
+    <p>클럽은 최첨단 사운드 시스템과 4K 프로젝션 스크린을 갖춘 메인 라운지를 중심으로, 라이트 쇼와 인터랙티브 디스플레이가 조화를 이룬다. 바에서는 고품질 칵테일과 프리미엄 와인을 제공하며, 전통 주류와 최신 트렌드 음료를 모두 즐길 수 있다.</p>
+    <p>VIP 라운지는 전용 입구와 프리미엄 서비스 전담 직원이 배치돼 있어, 개인 맞춤형 음료와 전용 좌석을 제공한다. 또한, 사전 예약 시 프라이빗 파티룸을 이용해 소규모 이벤트나 기업 모임을 진행할 수 있다. 모든 라운지는 무선 충전 패드와 고속 와이파이가 구비돼 있어 스마트폰 사용이 편리하다.</p>
+  </section>
+
+  <section id="tips" class="info-section">
+    <h2>이용 팁</h2>
+    <p>가양 클럽을 처음 방문한다면, 사전 예약 페이지에서 “첫 방문자 할인” 쿠폰을 적용받아 입장료를 절감할 수 있다. 특히, 주말보다 평일에 방문하면 대기 시간이 짧아 보다 여유롭게 즐길 수 있다.</p>
+    <p>음악 장르에 따라 파티가 진행되는 일정이 다르므로, 클럽 공식 SNS에서 실시간 스케줄을 확인하고 원하는 분위기의 라운지를 선택하는 것이 좋다. 또한, 옷차림은 드레스 코드를 준수해야 하며, 스니커즈는 허용되지만 과도한 스포츠웨어는 입장이 제한될 수 있다.</p>
+    <p>음료 주문 시, 바텐더에게 “오늘의 시그니처 칵테일”을 물어보면 특별한 메뉴를 경험할 수 있다. 마지막으로, 퇴실 전에는 개인 물품을 반드시 확인하고, 클럽 내 흡연 구역에서만 흡연을 허용한다는 점을 기억하자.</p>
+  </section>
+
+  <section id="faq" class="info-section">
+    <h2>자주 묻는 질문</h2>
+    <h3>Q1. 입장 시 신분증이 필요하나요?</h3>
+    <p>A. 네, 만 19세 이상 성인임을 확인할 수 있는 주민등록증, 운전면허증, 혹은 여권 중 하나를 제시해야 합니다. 신분증이 없을 경우 입장이 제한될 수 있습니다.</p>
+    <h3>Q2. 예약을 취소하고 싶을 때는 어떻게 해야 하나요?</h3>
+    <p>A. 예약 취소는 공식 웹사이트의 “예약 관리” 페이지에서 최소 24시간 전까지 가능하며, 이때는 전액 환불이 제공됩니다. 당일 취소는 환불이 불가하니 사전에 일정 확인을 권장합니다.</p>
+    <h3>Q3. VIP 라운지는 어떤 혜택을 제공하나요?</h3>
+    <p>A. VIP 라운지는 전용 입구, 전담 직원 서비스, 프리미엄 좌석, 그리고 맞춤형 드링크 메뉴가 포함됩니다. 또한, 별도 예약 시 전용 파티룸과 사전 음료 세팅을 요청할 수 있습니다.</p>
+    <h3>Q4. 클럽 내에서 사진 촬영이 가능한가요?</h3>
+    <p>A. 기본적인 셀프 사진 촬영은 허용되지만, 플래시 사용이나 무리한 조명 장비 사용은 제한됩니다. 공식 이벤트나 프로모션 촬영은 사전 협의 후 진행 가능합니다.</p>
+  </section>
+
+  <section class="cta-section">
+    <a href="https://gayang-club-trend.program-school.online/reserve.html" class="n-btn-pz0f"><span>예약하기</span></a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 가양 클럽. All rights reserved.</p>
+</footer>
 </body>
 </html>

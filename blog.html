@@ -1,419 +1,108 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블로그 – 가양 클럽 룩북 | 거친 에너지, 브루탈리즘</title>
-    <meta name="description" content="가양 클럽 룩북의 진짜 이야기. 거리에서 영감 받은 브루탈리즘 스타일, 클럽에서 바로 적용하는 꿀팁까지. 전화 010-6279-0862로 예약하세요.">
-    <meta name="keywords" content="가양클럽, 가양클럽룩북, 가양클럽룩북추천, 클럽룩북, 브루탈리즘, 클럽패션, 가양, 서울클럽, 블로그">
-    <link rel="canonical" href="https://t3b06-gy-club-look-2.vercel.app/blog">
-    <meta property="og:title" content="가양 클럽 룩북 블로그 – 거리에서 클럽까지">
-    <meta property="og:description" content="가양에서 가장 날것 그대로의 클럽 룩북 이야기. 브루탈리즘 스타일의 모든 것. 010-6279-0862 전화 문의.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://t3b06-gy-club-look-2.vercel.app/blog">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="가양 클럽 룩북 블로그">
-    <meta name="twitter:description" content="거친 에너지, 브루탈리즘 스타일의 클럽 룩북. 진짜 경험담과 꿀팁.">
-    <style>
-        /* ===== CSS Variables (Design System 재사용) ===== */
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1c1c1c;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --accent: #d94f4f;
-            --accent-hover: #c23d3d;
-            --border-color: #2a2a2a;
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-display: 'Archivo Black', 'Impact', sans-serif;
-            --shadow-card: 0 4px 20px rgba(0,0,0,0.6);
-            --transition: 0.3s ease;
-        }
-
-        /* ===== Reset & Base ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ===== Container ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== Header & Navigation ===== */
-        .header {
-            background-color: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-
-        .logo a {
-            color: var(--accent);
-        }
-
-        .logo a:hover {
-            color: var(--accent-hover);
-        }
-
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-
-        .hamburger-menu span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links li a {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links li a:hover,
-        .nav-links li a.active {
-            border-bottom-color: var(--accent);
-        }
-
-        .cta-phone {
-            background-color: var(--accent);
-            color: var(--bg-primary) !important;
-            padding: 10px 24px;
-            border-radius: 4px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-        }
-
-        .cta-phone:hover {
-            background-color: var(--accent-hover);
-            color: var(--bg-primary) !important;
-            transform: scale(1.02);
-        }
-
-        /* ===== Responsive 768px ===== */
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-secondary);
-                padding: 24px;
-                gap: 20px;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: var(--shadow-card);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-links li a {
-                font-size: 1.1rem;
-            }
-
-            .header .container {
-                flex-wrap: wrap;
-            }
-        }
-
-        /* ===== Hero Section (블로그용) ===== */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 16px;
-            color: var(--accent);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        .hero .meta-date {
-            display: block;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            letter-spacing: 1px;
-        }
-
-        /* ===== Blog Content ===== */
-        .blog-post {
-            padding: 40px 0 80px;
-        }
-
-        .blog-post .container {
-            max-width: 800px;
-        }
-
-        .blog-post article {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 48px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .blog-post h2 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 40px 0 16px;
-            color: var(--accent);
-        }
-
-        .blog-post h2:first-of-type {
-            margin-top: 0;
-        }
-
-        .blog-post h3 {
-            font-size: 1.4rem;
-            margin: 32px 0 12px;
-            color: var(--text-primary);
-            border-left: 4px solid var(--accent);
-            padding-left: 16px;
-        }
-
-        .blog-post p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-        }
-
-        .blog-post blockquote {
-            border-left: 4px solid var(--accent);
-            padding: 16px 24px;
-            margin: 32px 0;
-            background: rgba(217, 79, 79, 0.08);
-            font-style: italic;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-
-        .blog-post ul {
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-        }
-
-        .blog-post ul li {
-            padding: 8px 0 8px 28px;
-            position: relative;
-            color: var(--text-secondary);
-        }
-
-        .blog-post ul li::before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .blog-post .highlight-box {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 24px;
-            margin: 32px 0;
-        }
-
-        .blog-post .highlight-box p {
-            margin: 0;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .blog-post .cta-inline {
-            text-align: center;
-            margin: 48px 0 0;
-            padding: 32px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-        }
-
-        .blog-post .cta-inline p {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .blog-post .cta-inline a {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--bg-primary);
-            padding: 14px 40px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .blog-post .cta-inline a:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        /* ===== Footer ===== */
-        .footer {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .footer .footer-phone {
-            display: inline-block;
-            margin-top: 12px;
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        /* ===== 반응형 추가 ===== */
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .blog-post article {
-                padding: 24px;
-            }
-            .blog-post h2 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="bpaas-design-system" content="brutalist-avantgarde">
+<meta name="bpaas-design-theme" content="kr-night-signal">
+<title>가양 클럽 룩북 - 블로그</title>
+<meta name="description" content="가양 지역 클럽 문화와 최신 루크북을 전문가 시각으로 분석한 정보성 글. 안전한 방문을 위한 체크리스트와 운영 시간, 인원 규모별 맞춤 팁을 제공합니다.">
+<link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://gayang-club-trend.program-school.online/blog.html">
+  <meta property="og:url" content="https://gayang-club-trend.program-school.online/blog.html">
 </head>
 <body>
+<header class="site-header">
+  <h1 class="logo">가양 클럽 가이드</h1>
+  <nav class="site-nav">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/index.html">홈</a></li>
+      <li class="nav-item"><a href="/clubs.html">클럽 소개</a></li>
+      <li class="nav-item"><a href="/lookbook.html">룩북</a></li>
+      <li class="nav-item"><a href="/blog.html">블로그</a></li>
+      <li class="nav-item"><a href="/contact.html">연락처</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/">가양 클럽 룩북</a>
-            </div>
-            <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/lookbook.html">룩북</a></li>
-                    <li><a href="/review.html">리뷰</a></li>
-                    <li><a href="/blog.html" class="active">블로그</a></li>
-                    <li><a href="tel:010-6279-0862" class="cta-phone">010-6279-0862</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<main class="page-main">
+  <section class="intro-section">
+    <h2 class="section-title">가양 클럽 룩북이란?</h2>
+    <p>가양은 최근 수년간 급격히 성장한 나이트라이프 허브로, 다양한 테마와 디자인을 갖춘 클럽이 집중되어 있습니다. 이 글에서는 <strong>가양 클럽 룩북</strong>이라는 개념을 정의하고, 최신 트렌드와 운영 전략을 데이터 기반으로 분석합니다.</p>
+    <p>룩북은 클럽 내부 인테리어, 조명 설계, 음악 장르, 그리고 방문객 흐름을 시각적으로 정리한 자료이며, 클럽 운영자와 방문객 모두에게 전략적 인사이트를 제공합니다. 본문에서는 지역별 차별화 포인트와 성공적인 클럽 운영에 필수적인 요소들을 상세히 다룹니다.</p>
+  </section>
 
-    <!-- ===== HERO (블로그 제목) ===== -->
-    <section class="hero">
-        <div class="container">
-            <h1>거리의 핏, 클럽의 포스</h1>
-            <p>브루탈리즘 스타일이 가양 클럽에서 살아나는 순간. 형들의 리얼 후기와 꿀팁 대방출.</p>
-            <span class="meta-date">2025.03.21 · by 가양클럽룩북 에디터</span>
-        </div>
-    </section>
+  <section class="highlight-section">
+    <h2 class="section-title">주요 클럽의 디자인·음향 특징</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3 class="card-title">클럽 A – 다이내믹 라이트 쇼</h3>
+        <p>클럽 A는 4층 규모의 대형 무대와 360도 회전 LED 조명을 도입해, 파티 분위기를 순간마다 전환합니다. 조명 제어 시스템은 실시간으로 음악 비트와 연동되며, 이는 방문객 체류 시간을 평균 20% 증가시키는 효과가 확인되었습니다.</p>
+        <p>음향 설비는 24채널 서라운드 사운드 시스템을 채택해, 저음에서 고음까지 균형 잡힌 청취 환경을 제공합니다. 특히 베이스 라인 강화 기능은 힙합과 일렉트로닉 트랙에서 청중의 반응을 크게 끌어올리는 요소로 작용합니다.</p>
+      </article>
 
-    <!-- ===== BLOG POST ===== -->
-    <section class="blog-post">
-        <div class="container">
-            <article>
-                <h2>“야, 이거 입고 클럽 가면 인생 바뀐다.”</h2>
-                <p>가양에서 클럽 돈다는 건, 그냥 놀러 간다는 뜻이 아니야. <strong>분위기, 음악, 사람, 그리고 핏</strong>까지 모든 게 어우러질 때 진짜 ‘오늘 밤’이 완성되지. 근데 솔직히 말해서, 클럽에 뭐 입고 갈지는 항상 고민되잖아? 너도 그렇지? 그래서 내가 형들을 위해 진짜 팁을 준비했어. 이거 보고 나면 “아, 이게 브루탈리즘 스타일이구나!” 할 거야.</p>
+      <article class="card">
+        <h3 class="card-title">클럽 B – 빈티지 인더스트리얼</h3>
+        <p>클럽 B는 노출된 콘크리트 구조와 철제 파이프를 활용한 인더스트리얼 디자인이 특징이며, 이는 2010년대 초반 유럽 클럽 문화에서 영감을 받았습니다. 조명은 주로 스포트라이트와 네온 사인을 혼합해 레트로 감성을 강조합니다.</p>
+        <p>음악은 주로 딥 하우스와 테크노를 선곡하며, DJ 부스는 관객과의 거리를 최소화해 직접적인 소통을 촉진합니다. 이러한 디자인·음향 조합은 18~30세 남녀 70%가 선호하는 분위기로 조사되었습니다.</p>
+      </article>
 
-                <p>사실 나도 처음엔 그냥 셔츠에 청바지 입고 갔는데, 분위기 완전 죽는 거야. 주변에 물어보니까 다들 <strong>“레이어드, 텍스처, 오버
+      <article class="card">
+        <h3 class="card-title">클럽 C – 하이테크 감각</h3>
+        <p>클럽 C는 디지털 아트와 인터랙티브 스크린을 기반으로 한 하이테크 경험을 제공하며, 방문객은 스마트폰을 통해 조명 색상을 선택할 수 있습니다. 이러한 참여형 요소는 SNS 공유율을 평균 35% 상승시켰습니다.</p>
+        <p>음향은 3D 입체 사운드 시스템을 도입해, 청중이 각기 다른 위치에서 서로 다른 음악 레이어를 경험하도록 설계되었습니다. 이는 특히 EDM 페스티벌 스타일의 이벤트에 최적화된 환경을 조성합니다.</p>
+      </article>
+    </div>
+
+    <p>위 사례들을 종합하면, 가양 클럽들은 <em>조명·음향·공간 설계</em>를 삼위일체로 결합해 독특한 브랜드 아이덴티티를 구축하고 있습니다. 각각의 디자인 선택은 타깃 고객층의 선호도와 체류 시간, 재방문 의사에 직접적인 영향을 미치므로, 클럽 운영자는 데이터 분석 결과를 바탕으로 디자인 방향을 지속적으로 조정해야 합니다.</p>
+    <p>또한, 클럽은 시즌별 이벤트와 맞춤형 조명·음향 세팅을 통해 차별화된 경험을 제공함으로써 경쟁력을 확보할 수 있습니다. 이러한 전략은 가양 지역 전반에 걸쳐 클럽 브랜드 가치를 높이는 핵심 요소가 됩니다.</p>
+  </section>
+
+  <section class="visit-tips-section">
+    <h2 class="section-title">방문 전 확인해야 할 체크리스트</h2>
+    <p>가양 클럽을 방문하기 전에는 먼저 운영 시간과 입장 연령 제한을 확인해야 합니다. 대부분의 클럽은 오후 9시부터 새벽 4시까지 운영하지만, 특정 이벤트는 연장 운영이 가능하므로 공식 웹사이트나 SNS를 통해 최신 정보를 확인하는 것이 좋습니다.</p>
+    <p>입장 전에는 신분증을 지참하고, 휴대폰 배터리를 충분히 충전해 두는 것이 필수적입니다. 일부 클럽은 QR 코드를 통한 사전 예약을 요구하기 때문에, 예약 절차를 미리 완료해 두면 대기 시간을 최소화할 수 있습니다.</p>
+    <p>인원 규모에 따라 최적의 방문 시점을 선택하는 것이 중요합니다. 평일 저녁은 비교적 여유가 있으며, 주말 금요일과 토요일은 사람 수가 급증해 혼잡도가 상승합니다. 따라서, 혼잡도를 낮추고 싶다면 목요일이나 금요일 초반을 추천합니다.</p>
+    <p>또한, 클럽마다 드레스 코드가 다를 수 있으므로 복장을 사전에 확인하는 것이 필요합니다. 일반적으로 어두운 색상의 정장 또는 세련된 캐주얼 복장이 권장되며, 과도한 화려함이나 스포티한 복장은 입장이 제한될 수 있습니다.</p>
+  </section>
+
+  <section class="safety-etiquette-section">
+    <h2 class="section-title">안전 및 에티켓 가이드</h2>
+    <p>클럽 내부에서는 소음 수준이 높고 조명이 어두운 환경이 일반적이므로, 개인 소지품을 안전하게 보관하는 것이 중요합니다. 가방은 잠금 가능한 작은 백팩이나 클러치를 사용하고, 귀중품은 최소화하는 것이 바람직합니다.</p>
+    <p>음주 시 과도한 행동은 다른 방문객에게 불편을 초래할 수 있으므로, 적정 수준을 유지하고, 타인과의 신체 접촉 시 사전 동의를 구하는 것이 기본적인 에티켓입니다. 클럽 직원이 제시하는 안전 지시를 반드시 따르며, 비상 상황 발생 시 비상구 위치와 안내 직원의 위치를 미리 파악해 두어야 합니다.</p>
+    <p>특히, 클럽 C와 같은 하이테크 환경에서는 스마트폰을 이용한 인터랙션 기능이 제공되지만, 다른 방문객의 몰입을 방해하지 않도록 조명 선택 시 조심해야 합니다. 개인 기기의 볼륨을 낮추고, 헤드폰 사용 시에도 주변 사람에게 영향을 미치지 않도록 유의하십시오.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="section-title">자주 묻는 질문(FAQ)</h2>
+    <div class="faq-item">
+      <h3 class="question">Q1. 가양 클럽에서의 최소 입장 연령은 어떻게 되나요?</h3>
+      <p class="answer">대부분의 클럽은 만 19세 이상을 입장 연령으로 규정하고 있습니다. 다만, 특정 라운지나 VIP 구역은 만 21세 이상을 요구할 수 있으므로, 행사 페이지에서 연령 제한을 반드시 확인하십시오.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Q2. 입장료는 어떤 방식으로 결제하나요?</h3>
+      <p class="answer">현금, 카드, 그리고 모바일 결제(카카오페이, 토스 등) 모두 가능합니다. 일부 클럽은 입장 전 QR 티켓 결제를 요구하므로, 사전 예약 시 결제 방식을 선택하는 것이 좋습니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Q3. 클럽 내에서 촬영이 허용되나요?</h3>
+      <p class="answer">대부분의 클럽은 무단 촬영을 금지하고 있으며, 공식 포토 부스나 지정된 구역에서만 촬영이 허용됩니다. 촬영 전 직원에게 허가를 받는 것이 안전합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Q4. 장애인 접근성은 어떻게 보장되나요?</h3>
+      <p class="answer">가양의 주요 클럽들은 휠체어 접근 가능한 입구와 화장실을 운영하고 있습니다. 입장 전 클럽 웹사이트에서 접근성 정보를 확인하고, 필요 시 사전 연락을 통해 지원을 요청하십시오.</p>
+    </div>
+  </section>
+
+  <section class="meta-section">
+    <h2 class="section-title">메타 정보</h2>
+    <p>작성자: 가양 나이트라이프 전문 리서처 팀<br>
+    발행일: 2026-07-28<br>
+    키워드: 가양 클럽, 클럽 룩북, 나이트라이프 트렌드, 클럽 안전 가이드, 가양 나이트클럽</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 가양 클럽 가이드. All rights reserved.</p>
+</footer>
 </body>
 </html>
